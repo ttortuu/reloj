@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reloj, Cronómetro y Hora Mundial</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="navigation">
+            <button onclick="showClock()">Reloj</button>
+            <button onclick="showStopwatch()">Cronómetro</button>
+            <button onclick="showWorldClock()">Hora Mundial</button>
+        </div>
+
+        <!-- Sección del Reloj -->
+        <div class="clock-section" id="clock-section">
+            <div class="clock">
+                <div class="time">
+                    <span id="hours" class="time-unit">00</span>:
+                    <span id="minutes" class="time-unit">00</span>:
+                    <span id="seconds" class="time-unit">00</span>
+                </div>
+                <div class="date" id="date"></div>
+            </div>
+        </div>
+
+        <!-- Sección del Cronómetro -->
+        <div class="stopwatch-section" id="stopwatch-section" style="display: none;">
+            <div class="clock">
+                <div class="time">
+                    <span id="sw-hours">00</span>:<span id="sw-minutes">00</span>:<span id="sw-seconds">00</span>.<span id="sw-milliseconds">00</span>
+                </div>
+                <div class="controls">
+                    <button id="start-button" onclick="startStopwatch()">Iniciar</button>
+                    <button id="stop-button" onclick="stopStopwatch()">Detener</button>
+                    <button id="reset-button" onclick="resetStopwatch()">Reiniciar</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Sección de Hora Mundial -->
+        <div class="world-clock-section" id="world-clock-section" style="display: none;">
+            <h2 class="world-clock-title">Hora Mundial</h2>
+            <select id="timezone-select" class="country-selector" onchange="addWorldClock()">
+                <option value="" disabled selected>Seleccione un país</option>
+                <option value="America/New_York">Nueva York</option>
+                <option value="Europe/London">Londres</option>
+                <option value="Asia/Tokyo">Tokio</option>
+                <option value="Australia/Sydney">Sídney</option>
+                <option value="America/Buenos_Aires">Buenos Aires</option>
+                <!-- Agrega más opciones según sea necesario -->
+            </select>
+            <div class="time-container" id="world-clocks-container">
+                <!-- Los relojes de hora mundial se añadirán aquí dinámicamente -->
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
